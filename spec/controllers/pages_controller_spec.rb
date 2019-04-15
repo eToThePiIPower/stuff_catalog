@@ -9,5 +9,15 @@ RSpec.describe PagesController, type: :controller do
     it 'returns http success' do
       expect(response).to have_http_status(:success)
     end
+
+    it { should render_with_layout 'no_container' }
+  end
+
+  describe 'GET #about' do
+    it 'returns http success' do
+      get :about
+
+      expect(response).to have_http_status(:success)
+    end
   end
 end

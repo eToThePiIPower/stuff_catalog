@@ -1,3 +1,7 @@
 class PagesController < ApplicationController
-  def home; end
+  def home
+    render layout: 'no_container'
+  end
+
+  def about; end
 end
