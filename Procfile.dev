@@ -1,0 +1,2 @@
+rails: ./bin/rails server
+packs: ./bin/webpack-dev-server
