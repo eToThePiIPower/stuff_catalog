@@ -4,6 +4,8 @@ en:
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
+      new:
+        resend_confirmation_instructions: "Resend confirmation instructions"
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
@@ -32,12 +34,27 @@ en:
       success: "Successfully authenticated from %{kind} account."
     passwords:
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      edit:
+        change_my_password: "Change my password"
+        change_your_password: "Change your password"
+        new_password: "New password"
+        confirm_new_password: "Confirm new password"
+      new:
+        forgot_your_password: "Forgot Your Password?"
+        send_me_reset_password_instructions: "Send me reset password instructions"
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
+      edit:
+        cancel_my_account: "Cancel my account"
+        leave_blank_if_you_don_t_want_to_change_it: "Leave blank if you don't want to change it."
+        title: "Edit account"
+        unhappy: "Unhappy"
+        update: "Update my account"
+        we_need_your_current_password_to_confirm_your_changes: "We need your current password to confirm your changes."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
       signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
@@ -50,9 +67,20 @@ en:
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
     unlocks:
+      new:
+        resend_unlock_instructions: "Resend unlock instructions"
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+    shared:
+      back: "Back"
+      didnt_receive_confirmation_instructions: "Didn't receive confirmation instuctions?"
+      didnt_receive_unlock_instructions: "Didn't receive unlock instuctions?"
+      forgot_your_password: "Forgot your password?"
+      minimum_password_length: "Minimum password length"
+      sign_in: "Sign in"
+      sign_up: "Sign up"
+      sign_out: "Sign out"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

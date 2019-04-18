@@ -1,0 +1,5 @@
+<li class="nav-item">
+  <span class="navbar-text"><%= current_user.email %></span>
+  <%= link_to t('devise.shared.sign_out'), destroy_user_session_path, method: :delete,
+    class: 'btn btn-primary ml-lg-2 my-2 my-lg-0' %>
+</li>
