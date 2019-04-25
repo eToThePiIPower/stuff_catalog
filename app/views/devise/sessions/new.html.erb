@@ -12,16 +12,16 @@
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="form-group form-check">
-      <%= f.check_box :remember_me, class: 'form-check-input' %>
-      <%= f.label :remember_me, class: 'form-check-label' do %>
+    <div class="form-group custom-control custom-checkbox">
+      <%= f.check_box :remember_me, class: 'custom-control-input' %>
+      <%= f.label :remember_me, class: 'custom-control-label' do %>
         <%= resource.class.human_attribute_name('remember_me') %>
       <% end %>
     </div>
   <% end %>
 
   <div class="form-group">
-    <%= f.submit  t('devise.shared.sign_in'), class: 'btn btn-primary' %>
+    <%= f.submit  t('devise.shared.sign_in'), class: 'btn btn-primary btn-lg form-control' %>
   </div>
 <% end %>
 

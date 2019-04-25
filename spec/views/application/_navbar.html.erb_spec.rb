@@ -13,8 +13,10 @@ RSpec.describe 'application/_navbar', type: :view do
 
       expect(rendered).to have_selector('.navbar-text',
         text: 'user0001@example.com')
-      expect(rendered).to have_selector('.btn.btn-primary',
+      expect(rendered).to have_selector('.dropdown-item',
         text: 'Sign out')
+      expect(rendered).to have_selector('.dropdown-item',
+        text: 'Edit')
       expect(rendered).not_to have_selector('.btn',
         text: 'Sign up')
       expect(rendered).not_to have_selector('.btn',
@@ -34,8 +36,10 @@ RSpec.describe 'application/_navbar', type: :view do
         text: 'Sign up')
       expect(rendered).to have_selector('.btn.btn-outline-light',
         text: 'Sign in')
-      expect(rendered).not_to have_selector('.btn',
+      expect(rendered).not_to have_selector('.dropdown-item',
         text: 'Sign out')
+      expect(rendered).not_to have_selector('.dropdown-item',
+        text: 'Edit')
     end
   end
 end

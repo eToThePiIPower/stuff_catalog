@@ -49,10 +49,11 @@ en:
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       edit:
+        are_you_sure: "Are you sure you want to cancel your account?"
         cancel_my_account: "Cancel my account"
         leave_blank_if_you_don_t_want_to_change_it: "Leave blank if you don't want to change it."
         title: "Edit account"
-        unhappy: "Unhappy"
+        unhappy?: "Unhappy?"
         update: "Update my account"
         we_need_your_current_password_to_confirm_your_changes: "We need your current password to confirm your changes."
       signed_up: "Welcome! You have signed up successfully."
@@ -74,10 +75,11 @@ en:
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
     shared:
       back: "Back"
+      edit: "Edit"
       didnt_receive_confirmation_instructions: "Didn't receive confirmation instuctions?"
       didnt_receive_unlock_instructions: "Didn't receive unlock instuctions?"
       forgot_your_password: "Forgot your password?"
-      minimum_password_length: "Minimum password length"
+      minimum_password_length: ! "Minimum password length: %{count}"
       sign_in: "Sign in"
       sign_up: "Sign up"
       sign_out: "Sign out"
