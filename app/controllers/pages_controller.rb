@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    render layout: 'no_container'
+    render layout: 'jumbotron'
   end
 
   def about; end

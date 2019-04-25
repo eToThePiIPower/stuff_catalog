@@ -1,0 +1,13 @@
+<li class="nav-item dropdown">
+  <a id="navbarUserMenu" class="nav-link dropdown-toggle py-0" href="#"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="navbar-text"><%= current_user.email %></span>
+  </a>
+
+  <div class="dropdown-menu dropdown-menu-right">
+    <%= link_to t('devise.shared.edit'), edit_user_registration_path,
+      class: 'dropdown-item' %>
+    <%= link_to t('devise.shared.sign_out'), destroy_user_session_path, method: :delete,
+      class: 'dropdown-item' %>
+  </div>
+</li>

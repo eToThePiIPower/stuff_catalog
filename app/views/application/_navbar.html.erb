@@ -23,7 +23,11 @@
     <div class="dropdown-divider"></div>
 
     <ul class="navbar-nav ml-auto">
-      <%= render 'application/navbar/guest_menu' %>
+      <% if user_signed_in? %>
+        <%= render 'application/navbar/user_menu' %>
+      <% else %>
+        <%= render 'application/navbar/guest_menu' %>
+      <% end %>
     </ul>
   </div>
 </nav>

@@ -6,3 +6,25 @@
 $fa-font-path: '~font-awesome/fonts';
 @import '~font-awesome/scss/font-awesome';
 
+.alert {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.list-inline-vbar {
+  .list-inline-item + .list-inline-item {
+    margin-right: 0;
+
+    &::before {
+      content: "\2503";
+      margin: 0 0.25em;
+    }
+  }
+}
+
+.mw-50 {
+  @include media-breakpoint-up(md) {
+    margin: 0 auto;
+    max-width: 50%;
+  }
+}
