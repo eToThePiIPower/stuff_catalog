@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "UsersCanEditProfiles", type: :feature do
+RSpec.feature 'Users can edit profiles', type: :feature do
   scenario 'User edits her profile details' do
     user = create :user, email: 'user@example.com', username: 'OldUsername', password: 'password'
     visit '/users/sign_in'
