@@ -8,7 +8,7 @@ RSpec.feature 'Users can create items', type: :feature do
       login_as(user)
     end
 
-    scenario 'A user is create an item' do
+    scenario 'A user creates an item' do
       visit '/items/new'
 
       fill_in 'ISBN', with: '1234567890'
@@ -18,6 +18,14 @@ RSpec.feature 'Users can create items', type: :feature do
       expect { click_button 'Add item' }.to change { Item.count }.by(1)
 
       expect(page).to have_text 'Your item has been submitted successfully'
+    end
+  end
+
+  context 'A user is not signed in' do
+    scenario 'A guest cannot create an item' do
+      visit '/items/new'
+
+      expect(page).to have_text 'You need to sign in or sign up before continuing'
     end
   end
 end
