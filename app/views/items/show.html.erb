@@ -4,4 +4,9 @@
     <p class="small text-muted"><%= @item.isbn %></p>
     <p class="card-text"><%= number_to_currency(@item.value) %></p>
   </div>
+  <div class="btn-group card-footer-btn-group" role="group" aria-label="Action buttons">
+    <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-sm btn-secondary w-75' %>
+    <%= link_to 'Delete', item_path(@item), method: :delete, data: { confirm: 'Are you sure?' },
+      class: 'btn btn-sm btn-danger w-25' %>
+  </div>
 </div>
