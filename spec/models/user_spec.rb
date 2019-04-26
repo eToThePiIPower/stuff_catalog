@@ -10,4 +10,7 @@ RSpec.describe User, type: :model do
       .for(:username)
       .with_message('can only contain alphanumeric characters, underscores, or periods')
   end
+
+  it { should have_one(:profile).dependent(:destroy) }
+  it { should accept_nested_attributes_for(:profile) }
 end

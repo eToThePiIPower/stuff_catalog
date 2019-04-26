@@ -1,0 +1,19 @@
+<%= f.fields_for :profile, @user.profile do |p| %>
+  <div class="form-group">
+    <%= p.label :location %>
+    <%= p.text_field :location,
+      class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= p.label :homepage %>
+    <%= p.url_field :homepage,
+      class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= p.label :bio %>
+    <%= p.text_area :bio, rows: 4,
+      class: 'form-control' %>
+  </div>
+<% end %>

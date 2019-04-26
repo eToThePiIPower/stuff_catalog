@@ -6,6 +6,9 @@ RSpec.feature 'UsersCanLogins', type: :feature do
 
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Username', with: 'Username'
+    fill_in 'Bio', with: 'Hello World!'
+    fill_in 'Location', with: 'Hello, World'
+    fill_in 'Homepage', with: 'https://example.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
     click_button 'Sign up'

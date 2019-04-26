@@ -11,6 +11,10 @@
     <%= f.text_field :username, class: 'form-control' %>
   </div>
 
+  <% if resource_name == :user %>
+    <%= render 'user_profile_form', f: f %>
+  <% end %>
+
   <div class="form-group">
     <%= f.label :password %>
     <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
