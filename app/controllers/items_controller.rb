@@ -18,10 +18,10 @@ class ItemsController < ApplicationController
     @item = current_user.items.new(item_params)
     if @item.save
       respond_to do |format|
-        format.html { redirect_to @item, notice: 'Your item has been submitted successfully!' }
+        format.html { redirect_to @item, notice: t('.success_flash') }
       end
     else
-      flash.now[:alert] = 'There were errors in the item.'
+      flash.now[:alert] = t('.errors_flash')
       respond_to do |format|
         format.html { render :new }
       end
@@ -30,9 +30,9 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to @item, notice: 'Your item has been updated successfully!'
+      redirect_to @item, notice: t('.success_flash')
     else
-      flash.now[:alert] = 'There were errors in the item.'
+      flash.now[:alert] = t('.errors_flash')
       respond_to do |format|
         format.html { render :edit }
       end
@@ -42,11 +42,11 @@ class ItemsController < ApplicationController
   def destroy
     if @item.destroy
       respond_to do |format|
-        format.html { redirect_to items_path, notice: 'Your item has been deleted.' }
+        format.html { redirect_to items_path, notice: t('.success_flash') }
       end
     else
       respond_to do |format|
-        format.html { redirect_to items_path, alert: 'Item could not be deleted!' }
+        format.html { redirect_to items_path, alert: t('.errors_flash') }
       end
     end
   end
@@ -61,7 +61,7 @@ class ItemsController < ApplicationController
     @item = current_user.items.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     respond_to do |format|
-      format.html { redirect_to items_path, alert: 'Item does not exist' }
+      format.html { redirect_to items_path, alert: t('items.shared.does_not_exist') }
     end
   end
 end

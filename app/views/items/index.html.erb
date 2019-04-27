@@ -1,11 +1,11 @@
 <% if @items.empty? %>
   <p class="lead">
-    Your collection appears to be empty.
+    <%= t('.empty') %>
   </p>
-  <%= link_to 'Add your first item', new_item_path,
+  <%= link_to t('.add_first'), new_item_path,
     class: 'btn btn-primary btn-lg form-control my-5' %>
 <% else %>
-  <h1>Your Item Collection</h1>
+  <h1><%= t('.title') %></h1>
   <div class="list-group">
     <% @items.each do |item| %>
       <%= link_to item_path(item),
@@ -19,7 +19,7 @@
       <% end %>
     <% end %>
     <div class="btn-group card-footer-btn-group">
-      <%= link_to 'New item', new_item_path, class: 'btn btn-lg btn-primary' %>
+      <%= link_to t('.new_item'), new_item_path, class: 'btn btn-lg btn-primary' %>
     </div>
   </div>
 <% end %>

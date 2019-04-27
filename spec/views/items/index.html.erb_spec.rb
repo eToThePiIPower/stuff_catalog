@@ -25,5 +25,11 @@ RSpec.describe 'items/index.html.erb', type: :view do
       expect(rendered).to have_selector '.list-group-item',
         text: 'Title', count: '2'
     end
+
+    it 'renders a new item button' do
+      render
+      expect(rendered).to have_selector '.btn-primary',
+        text: 'New item'
+    end
   end
 end

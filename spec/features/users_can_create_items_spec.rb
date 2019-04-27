@@ -15,7 +15,7 @@ RSpec.feature 'Users can create items', type: :feature do
       fill_in 'Title', with: 'Example Title'
       fill_in 'Value', with: '19.99'
 
-      expect { click_button 'Add item' }.to change { Item.count }.by(1)
+      expect { click_button 'Submit item' }.to change { Item.count }.by(1)
 
       expect(page).to have_text 'Your item has been submitted successfully'
     end

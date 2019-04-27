@@ -1,0 +1,29 @@
+en:
+  items:
+    create:
+      success_flash: 'Your item has been submitted successfully!' 
+      errors_flash: 'There were errors in the item.'
+    destroy:
+      errors_flash: 'Item could not be deleted!'
+      success_flash: 'Your item has been deleted.'
+    edit:
+      title: 'Edit item'
+    form:
+      submit: 'Submit item'
+    index:
+      add_first: 'Add your first item'
+      empty: Your collection appears to be empty.
+      new_item: 'New item'
+      title: Your Item Collection
+    new:
+      title: 'Add an item'
+      submit: 'Submit item'
+    show:
+      delete: 'Delete'
+      edit: 'Edit'
+    shared:
+      does_not_exist: 'Item does not exist'
+    update:
+      errors_flash: 'There were errors in the item.'
+      success_flash: 'Your item has been updated successfully!'
+

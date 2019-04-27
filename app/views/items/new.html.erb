@@ -1,22 +1,3 @@
-<h1>Add a new item</h1>
+<h1><%= t('.title') %></h1>
 
-<%= form_for(@item) do |f| %>
-  <div class="form-group">
-    <%= f.label :isbn, 'ISBN' %>
-    <%= f.text_field :isbn, autofocus: true, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :value %>
-    <%= f.number_field :value, step: 0.01, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit "Add item", class: 'btn btn-primary form-control' %>
-  </div>
-<% end %>
+<%= render 'form' %>

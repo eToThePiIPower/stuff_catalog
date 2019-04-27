@@ -109,6 +109,12 @@ RSpec.describe ItemsController, type: :controller do
           item.reload
           expect(item.title).to eq 'New Title'
         end
+
+        it 'displays a flash message' do
+          item = create(:item, user: user, title: 'Old Title')
+          put :update, params: { id: item.id, item: { title: 'New Title' } }
+          expect(flash[:notice]).to match 'Your item has been updated successfully!'
+        end
       end
 
       context 'with invalid parameters' do
@@ -138,6 +144,12 @@ RSpec.describe ItemsController, type: :controller do
         expect do
           delete :destroy, params: { id: item.id }
         end.to change(Item, :count).by(-1)
+      end
+
+      it 'displays a flash message' do
+        item = create(:item, user: user)
+        delete :destroy, params: { id: item.id }
+        expect(flash[:notice]).to match 'Your item has been deleted'
       end
     end
   end
