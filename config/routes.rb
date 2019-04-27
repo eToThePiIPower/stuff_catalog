@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  unauthenticated do
+    root 'pages#home'
+  end
+  authenticated :user do
+    root 'items#index'
+  end
+
+  devise_for :users
+
+  get '/about', to: 'pages#about'
+
+  resources :items
 end
