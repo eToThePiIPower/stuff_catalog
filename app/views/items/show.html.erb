@@ -1,7 +1,11 @@
 <div class="card mb-3">
   <div class="card-body">
-    <h1 class="card-title mb-1 h5"><%= @item.title %></h2>
-    <p class="small text-muted"><%= @item.isbn %></p>
+    <div class="d-flex w-100 justify-content-between">
+      <h1 class="card-title mb-1 h5"><%= @item.title %></h2>
+      <small class="text-muted"><%= time_ago_in_words(@item.created_at) %></small>
+    </div>
+
+    <p class="card-text small text-muted"><%= @item.isbn %></p>
     <p class="card-text"><%= number_to_currency(@item.value) %></p>
   </div>
   <div class="btn-group card-footer-btn-group" role="group" aria-label="Action buttons">
