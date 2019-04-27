@@ -28,3 +28,10 @@ $fa-font-path: '~font-awesome/fonts';
     max-width: 50%;
   }
 }
+
+.card-footer-btn-group {
+  .btn {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+}

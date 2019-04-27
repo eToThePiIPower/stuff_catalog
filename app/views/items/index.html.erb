@@ -1,0 +1,25 @@
+<% if @items.empty? %>
+  <p class="lead">
+    <%= t('.empty') %>
+  </p>
+  <%= link_to t('.add_first'), new_item_path,
+    class: 'btn btn-primary btn-lg form-control my-5' %>
+<% else %>
+  <h1><%= t('.title') %></h1>
+  <div class="list-group">
+    <% @items.each do |item| %>
+      <%= link_to item_path(item),
+        class: 'list-group-item list-group-item-action flex-column align-items-start' do %>
+        <div class="d-flex w-100 justify-content-between">
+          <h2 class="mb-1 h5"><%= item.title %></h2>
+          <small class="text-muted"><%= time_ago_in_words(item.created_at) %></small>
+        </div>
+        <small class="text-muted"><%= item.isbn %></small>
+        <p class="mb-1"><%= number_to_currency(item.value) %></p>
+      <% end %>
+    <% end %>
+    <div class="btn-group card-footer-btn-group">
+      <%= link_to t('.new_item'), new_item_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="d-flex w-100 justify-content-between">
+      <h1 class="card-title mb-1 h5"><%= @item.title %></h2>
+      <small class="text-muted"><%= time_ago_in_words(@item.created_at) %></small>
+    </div>
+
+    <p class="card-text small text-muted"><%= @item.isbn %></p>
+    <p class="card-text"><%= number_to_currency(@item.value) %></p>
+  </div>
+  <div class="btn-group card-footer-btn-group" role="group" aria-label="Action buttons">
+    <%= link_to t('.edit'), edit_item_path(@item), class: 'btn btn-sm btn-secondary w-75' %>
+    <%= link_to t('.delete'), item_path(@item),
+      method: :delete, data: { confirm: t('.are_you_sure') },
+      class: 'btn btn-sm btn-danger w-25' %>
+  </div>
+</div>

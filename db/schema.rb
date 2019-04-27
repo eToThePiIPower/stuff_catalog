@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_25_234911) do
+ActiveRecord::Schema.define(version: 2019_04_26_184515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: :cascade do |t|
+    t.string "isbn"
+    t.string "title"
+    t.decimal "value", precision: 16, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string "homepage"
@@ -53,5 +63,6 @@ ActiveRecord::Schema.define(version: 2019_04_25_234911) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "items", "users"
   add_foreign_key "profiles", "users"
 end
