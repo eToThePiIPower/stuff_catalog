@@ -2,6 +2,9 @@
 
 `Stuff Catalog` is a simple tool for keeping track of the items you own.
 
+This version `v0.1` is just a very-basic CRUD application meant as a framework
+on which to build the rest of the features.
+
 It was inspired by a need to keep a catalog of my personal effects, their
 approximate values, and their locations for my home-owners insurance. As such,
 the early versions are focussing on ease of data entry and printing tabulated
