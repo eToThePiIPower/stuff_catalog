@@ -60,6 +60,10 @@ class ItemsController < ApplicationController
     book.lookup
     @item.title = book.title
     @item.isbn = book.isbn
+    @item.authors = book.authors
+    @item.categories = book.categories
+    @item.description = book.description
+    @item.publisher = book.publisher
     render :new
   end
 
@@ -69,13 +73,18 @@ class ItemsController < ApplicationController
     book.lookup
     @item.title = book.title
     @item.isbn = book.isbn
+    @item.authors = book.authors
+    @item.categories = book.categories
+    @item.description = book.description
+    @item.publisher = book.publisher
     render :edit
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:isbn, :title, :value)
+    params.require(:item).permit(:isbn, :title, :authors, :categories,
+      :description, :publisher, :published_on, :page_count, :value)
   end
 
   def find_user_item

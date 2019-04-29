@@ -15,6 +15,12 @@
           <small class="text-muted"><%= time_ago_in_words(item.created_at) %></small>
         </div>
         <small class="text-muted"><%= item.isbn %></small>
+        <p>
+        <% item.authors.each do |author| %>
+          <strong><u><%= author %></u></strong>
+        <% end %>
+        </p>
+        <p><%= item.description %></p>
         <p class="mb-1"><%= number_to_currency(item.value) %></p>
       <% end %>
     <% end %>

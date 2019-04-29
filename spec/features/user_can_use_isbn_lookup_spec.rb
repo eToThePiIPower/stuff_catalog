@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'support/vcr'
 
 RSpec.feature 'User can use ISBN lookups', type: :feature do
   scenario 'A user uses ISBN lookup on an item' do

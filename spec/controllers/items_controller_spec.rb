@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'support/vcr'
 
 RSpec.describe ItemsController, type: :controller do
   let(:user) { create(:user) }
@@ -156,17 +157,18 @@ RSpec.describe ItemsController, type: :controller do
     describe 'POST #lookup_new' do
       context 'with valid isbn' do
         it "fills in the item's details" do
-          VCR.use_cassette('9781451648546') do
-            post :lookup_new, params: { item: { isbn: '9781451648546' } }
+          VCR.use_cassette('9781430230571') do
+            post :lookup_new, params: { item: { isbn: '9781430230571' } }
           end
 
-          expect(assigns(:item).isbn).to eq '9781451648546'
-          expect(assigns(:item).title).to eq 'Steve Jobs'
+          expect(assigns(:item).isbn).to eq '9781430230571'
+          expect(assigns(:item).title).to eq 'Pro Puppet'
+          expect(assigns(:item).authors).to eq ['James Turnbull', 'Jeffrey McCune']
         end
 
         it 'rerenders the :new template' do
-          VCR.use_cassette('9781451648546') do
-            post :lookup_new, params: { item: { isbn: '9781451648546' } }
+          VCR.use_cassette('9781430230571') do
+            post :lookup_new, params: { item: { isbn: '9781430230571' } }
           end
 
           expect(response).to render_template(:new)
