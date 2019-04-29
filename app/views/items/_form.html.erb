@@ -4,6 +4,12 @@
     <%= f.text_field :isbn, autofocus: true, class: 'form-control' %>
   </div>
 
+  <% if controller.action_name == 'new' || controller.action_name == 'lookup_new' %>
+    <%= f.submit 'Lookup by ISBN', class: 'btn btn-primary', formaction: 'lookup_new' %>
+  <% elsif controller.action_name == 'edit' %>
+    <%= f.submit 'Lookup by ISBN', class: 'btn btn-primary', formaction: 'lookup_edit' %>
+  <% end %>
+
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>

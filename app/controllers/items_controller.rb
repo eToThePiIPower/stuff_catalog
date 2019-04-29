@@ -1,6 +1,8 @@
+require 'services/isbn_service'
+
 class ItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_user_item, only: [:show, :edit, :update, :destroy]
+  before_action :find_user_item, only: [:show, :edit, :lookup_edit, :update, :destroy]
 
   def index
     @items = current_user.items.all
@@ -49,6 +51,25 @@ class ItemsController < ApplicationController
         format.html { redirect_to items_path, alert: t('.errors_flash') }
       end
     end
+  end
+
+  def lookup_new
+    @item = current_user.items.new
+    isbn = params[:item][:isbn]
+    book = Services::ISBNService.new(isbn)
+    book.lookup
+    @item.title = book.title
+    @item.isbn = book.isbn
+    render :new
+  end
+
+  def lookup_edit
+    isbn = params[:item][:isbn]
+    book = Services::ISBNService.new(isbn)
+    book.lookup
+    @item.title = book.title
+    @item.isbn = book.isbn
+    render :edit
   end
 
   private

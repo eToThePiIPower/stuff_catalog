@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'support/vcr'
 
 RSpec.describe Services::ISBNService do
   it 'looks up a book' do
