@@ -1,14 +1,17 @@
-<div class="small text-muted text-right"><%= time_ago_in_words(item.created_at) %></div>
-<div class="d-flex w-100 justify-content-between">
-  <h2 class="mb-1 h5"><%= item.title %></h2>
-  <div><%= render 'authors', authors: item.authors %></div>
-</div>
-<div class="small text-muted mb-4"><%= item.isbn %></div>
-<div class="d-flex w-100 justify-content-between mb-1">
-  <div class="category-badges">
-    <% item.categories.each do |category| %>
-      <span class="badge badge-secondary"><%= category %></span>
-    <% end %>
+<%= link_to item_path(item),
+  class: 'list-group-item list-group-item-action flex-column align-items-start' do %>
+  <div class="small text-muted text-right"><%= time_ago_in_words(item.created_at) %></div>
+  <div class="d-flex w-100 justify-content-between">
+    <h2 class="mb-1 h5"><%= item.title %></h2>
+    <div><%= render 'authors', authors: item.authors %></div>
   </div>
-  <span><%= number_to_currency(item.value) %></span>
-</div>
+  <div class="small text-muted mb-4"><%= item.isbn %></div>
+  <div class="d-flex w-100 justify-content-between mb-1">
+    <div class="category-badges">
+      <% item.categories.each do |category| %>
+        <span class="badge badge-secondary"><%= category %></span>
+      <% end %>
+    </div>
+    <span><%= number_to_currency(item.value) %></span>
+  </div>
+<% end %>

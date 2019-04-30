@@ -8,10 +8,7 @@
   <h1><%= t('.title') %></h1>
   <div class="list-group">
     <% @items.each do |item| %>
-      <%= link_to item_path(item),
-        class: 'list-group-item list-group-item-action flex-column align-items-start' do %>
-        <%= render 'index_item', item: item %>
-      <% end %>
+      <%= render 'index_item', item: item %>
     <% end %>
     <div class="btn-group card-footer-btn-group">
       <%= link_to t('.new_item'), new_item_path, class: 'btn btn-lg btn-primary' %>
