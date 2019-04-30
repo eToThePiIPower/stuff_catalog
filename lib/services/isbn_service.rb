@@ -39,8 +39,12 @@ module Services
 
     def parse_isbns(volume_info)
       identifiers = volume_info['industryIdentifiers']
-      @isbn10 = identifiers.select { |id| id['type'] == 'ISBN_10' }[0]['identifier']
-      @isbn13 = identifiers.select { |id| id['type'] == 'ISBN_13' }[0]['identifier']
+
+      isbn10 = identifiers.detect { |id| id['type'] == 'ISBN_10' }
+      @isbn10 = isbn10['identifier'] if isbn10
+
+      isbn13 = identifiers.detect { |id| id['type'] == 'ISBN_13' }
+      @isbn13 = isbn13['identifier'] if isbn13
     end
   end
 end

@@ -32,4 +32,14 @@ RSpec.describe Services::ISBNService do
       expect(book.title).to eq nil
     end
   end
+
+  it 'handles missing ISBNs in return JSON gracefully' do
+    VCR.use_cassette('blank') do
+      book = Services::ISBNService.new('')
+      book.lookup
+
+      expect(book.isbn10).to eq nil
+      expect(book.isbn13).to eq nil
+    end
+  end
 end

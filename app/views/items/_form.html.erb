@@ -1,14 +1,19 @@
 <%= form_for(@item) do |f| %>
+  <%= f.submit 'Default Submit', class: 'd-none' %>
   <div class="form-group">
     <%= f.label :isbn, 'ISBN' %>
-    <%= f.text_field :isbn, autofocus: true, class: 'form-control' %>
+    <div class="input-group">
+      <%= f.text_field :isbn, autofocus: true, class: 'form-control' %>
+      <div class="input-group-append">
+        <% case controller.action_name
+           when 'new', 'lookup_new', 'create' then %>
+          <%= f.submit 'Lookup by ISBN', class: 'btn btn-primary', formaction: '/items/lookup_new' %>
+        <% when 'edit', 'lookup_edit' then %>
+          <%= f.submit 'Lookup by ISBN', class: 'btn btn-primary', formaction: 'lookup_edit' %>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <% if controller.action_name == 'new' || controller.action_name == 'lookup_new' %>
-    <%= f.submit 'Lookup by ISBN', class: 'btn btn-primary', formaction: 'lookup_new' %>
-  <% elsif controller.action_name == 'edit' %>
-    <%= f.submit 'Lookup by ISBN', class: 'btn btn-primary', formaction: 'lookup_edit' %>
-  <% end %>
 
   <div class="form-group">
     <%= f.label :title %>

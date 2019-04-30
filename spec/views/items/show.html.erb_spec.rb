@@ -13,8 +13,7 @@ RSpec.describe 'items/show.html.erb', type: :view do
       text: 'Rails 5 Test Prescriptions')
     expect(rendered).to have_selector('.small',
       text: '978-1-68050-250-3')
-    expect(rendered).to have_selector('p',
-      text: '$39.95')
+    expect(rendered).to have_text '$39.95'
   end
 
   it 'shows action buttons' do
