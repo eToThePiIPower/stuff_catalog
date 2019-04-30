@@ -13,6 +13,36 @@ RSpec.describe Item, type: :model do
   it { should belong_to :user }
   it { should validate_presence_of :title }
 
+  describe 'scopes' do
+    describe '.category' do
+      it 'filters by any one category' do
+        user = create(:user)
+        item1 = create(:item, user: user, categories: ['Filtered', 'Other 1'])
+        item2 = create(:item, user: user, categories: ['Other 1', 'Other 2'])
+        item3 = create(:item, user: user, categories: ['Other 2', 'Filtered'])
+
+        filtered = Item.category('Filtered')
+        expect(filtered).to include(item1)
+        expect(filtered).to include(item3)
+        expect(filtered).not_to include(item2)
+      end
+    end
+
+    describe '.clike' do
+      it 'filters by any one category using partial matching' do
+        user = create(:user)
+        item1 = create(:item, user: user, categories: ['Filtered', 'Other 1'])
+        item2 = create(:item, user: user, categories: ['Other 1', 'Other 2'])
+        item3 = create(:item, user: user, categories: ['Other 2', 'FILTERED'])
+
+        filtered = Item.clike('ilter')
+        expect(filtered).to include(item1)
+        expect(filtered).to include(item3)
+        expect(filtered).not_to include(item2)
+      end
+    end
+  end
+
   describe '#authors=' do
     it 'normalizes strings to arrays' do
       item = Item.new

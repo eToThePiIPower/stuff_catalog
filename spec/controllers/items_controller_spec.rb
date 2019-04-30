@@ -15,6 +15,20 @@ RSpec.describe ItemsController, type: :controller do
         expect(response).to have_http_status(:success)
       end
 
+      it 'can filter by category' do
+        create(:item, user: user, categories: ['Filtered'])
+        create(:item, user: user, categories: ['OTHER'])
+        get :index, params: { category: 'Filtered' }
+        expect(assigns(:items).count).to eq 1
+      end
+
+      it 'can filter by category using partial matches' do
+        create(:item, user: user, categories: ['Filtered'])
+        create(:item, user: user, categories: ['OTHER'])
+        get :index, params: { clike: 'filter' }
+        expect(assigns(:items).count).to eq 1
+      end
+
       it "only returns the current user's items" do
         create(:item, user: user)
         create(:item)

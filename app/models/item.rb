@@ -2,6 +2,11 @@ class Item < ApplicationRecord
   belongs_to :user
   validates :title, presence: true
 
+  scope :category, ->(category) { where(':category = ANY(categories)', category: category) }
+  scope :clike, lambda { |category|
+    where("array_to_string(categories, '||') ILIKE :category", category: "%#{category}%")
+  }
+
   def authors=(authors)
     case authors
     when String

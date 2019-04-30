@@ -5,7 +5,9 @@ class ItemsController < ApplicationController
   before_action :find_user_item, only: [:show, :edit, :lookup_edit, :update, :destroy]
 
   def index
-    @items = current_user.items.all
+    @items = current_user.items.where(nil)
+    @items = @items.category(params[:category]) if params[:category]
+    @items = @items.clike(params[:clike]) if params[:clike]
   end
 
   def show; end
