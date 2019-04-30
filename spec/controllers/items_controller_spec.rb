@@ -15,6 +15,13 @@ RSpec.describe ItemsController, type: :controller do
         expect(response).to have_http_status(:success)
       end
 
+      it 'can filter by author' do
+        create(:item, user: user, authors: ['Filtered'])
+        create(:item, user: user, authors: ['OTHER'])
+        get :index, params: { author: 'Filtered' }
+        expect(assigns(:items).count).to eq 1
+      end
+
       it 'can filter by category' do
         create(:item, user: user, categories: ['Filtered'])
         create(:item, user: user, categories: ['OTHER'])

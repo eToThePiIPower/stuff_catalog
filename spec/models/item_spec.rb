@@ -14,6 +14,20 @@ RSpec.describe Item, type: :model do
   it { should validate_presence_of :title }
 
   describe 'scopes' do
+    describe '.author' do
+      it 'filters by any one author' do
+        user = create(:user)
+        item1 = create(:item, user: user, authors: ['Filtered', 'Other 1'])
+        item2 = create(:item, user: user, authors: ['Other 1', 'Other 2'])
+        item3 = create(:item, user: user, authors: ['Other 2', 'Filtered'])
+
+        filtered = Item.author('Filtered')
+        expect(filtered).to include(item1)
+        expect(filtered).to include(item3)
+        expect(filtered).not_to include(item2)
+      end
+    end
+
     describe '.category' do
       it 'filters by any one category' do
         user = create(:user)

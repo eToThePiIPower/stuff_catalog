@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   belongs_to :user
   validates :title, presence: true
 
+  scope :author, ->(author) { where(':author = ANY(authors)', author: author) }
   scope :category, ->(category) { where(':category = ANY(categories)', category: category) }
   scope :clike, lambda { |category|
     where("array_to_string(categories, '||') ILIKE :category", category: "%#{category}%")

@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = current_user.items.where(nil)
+    @items = @items.author(params[:author]) if params[:author]
     @items = @items.category(params[:category]) if params[:category]
     @items = @items.clike(params[:clike]) if params[:clike]
   end
