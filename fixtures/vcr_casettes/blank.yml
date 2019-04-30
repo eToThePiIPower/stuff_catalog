@@ -1,0 +1,730 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: 'https://www.googleapis.com/books/v1/volumes?q=isbn:'
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Tue, 30 Apr 2019 02:03:30 GMT
+      Date:
+      - Tue, 30 Apr 2019 02:03:30 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Etag:
+      - '"IUREzboS_XZycecz4xfru1ipYfo/V2aq65U4iVV9xsoX2WDCFs3MsAA"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+         "kind": "books#volumes",
+         "totalItems": 4760,
+         "items": [
+          {
+           "kind": "books#volume",
+           "id": "t5rgAAAAMAAJ",
+           "etag": "9SSGTYZwq6k",
+           "selfLink": "https://www.googleapis.com/books/v1/volumes/t5rgAAAAMAAJ",
+           "volumeInfo": {
+            "title": "ISBN Review",
+            "authors": [
+             "International ISBN Agency"
+            ],
+            "publishedDate": "1998",
+            "industryIdentifiers": [
+             {
+              "type": "OTHER",
+              "identifier": "UOM:39015081566500"
+             }
+            ],
+            "readingModes": {
+             "text": false,
+             "image": false
+            },
+            "printType": "BOOK",
+            "categories": [
+             "International Standard Book Numbers"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "imageLinks": {
+             "smallThumbnail": "http://books.google.com/books/content?id=t5rgAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+             "thumbnail": "http://books.google.com/books/content?id=t5rgAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=t5rgAAAAMAAJ&q=isbn:&dq=isbn:&hl=&cd=1&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=t5rgAAAAMAAJ&dq=isbn:&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/ISBN_Review.html?hl=&id=t5rgAAAAMAAJ"
+           },
+           "saleInfo": {
+            "country": "US",
+            "saleability": "NOT_FOR_SALE",
+            "isEbook": false
+           },
+           "accessInfo": {
+            "country": "US",
+            "viewability": "NO_PAGES",
+            "embeddable": false,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+             "isAvailable": false
+            },
+            "pdf": {
+             "isAvailable": false
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=t5rgAAAAMAAJ&hl=&printsec=frontcover&source=gbs_api",
+            "accessViewStatus": "NONE",
+            "quoteSharingAllowed": false
+           }
+          },
+          {
+           "kind": "books#volume",
+           "id": "D9VEIQAACAAJ",
+           "etag": "Hb39d84SHVI",
+           "selfLink": "https://www.googleapis.com/books/v1/volumes/D9VEIQAACAAJ",
+           "volumeInfo": {
+            "title": "Paraxial Light Beams with Angular Momentum",
+            "authors": [
+             "A. Bekshaev",
+             "Marat Samuilovich Soskin",
+             "M. Vasnetsov"
+            ],
+            "publisher": "Nova Science Pub Incorporated",
+            "publishedDate": "2008",
+            "description": "Fundamental and applied concepts concerning the ability of light beams to carry a certain mechanical angular momentum (AM) with respect to the propagation axis are reviewed and discussed in this book. In paraxial beams, the total beam AM can be represented as a sum of the spin (SAM) and orbital (OAM) angular momentums. SAM is an attribute of beams with elliptic (circular) polarisation and is related to the spin of photons. OAM is conditioned by the macroscopic transverse energy circulation and does not depend on the beam polarisation state. In turn, the OAM can be divided in two components which reflect different forms of this energy circulation. Important class of beams with OAM, are vortex beams with helical geometric structure. They constitute a full set of azimuthal harmonics characterised by integer index l each possessing AM l per photon. Arbitrary paraxial beam can be represented as a superposition of helical beams with different l. Models of helical beams and methods of their practical generation are discussed. Transverse energy flows in light beams can be described on the basis of a mechanical model assimilating them to fluid bodies; remarkably, in a helical beam the transverse flow distribution exactly corresponds to the laws of the vortex behaviour in other fields of physics (fluid dynamics, electricity). Experiments on transmission of the beam AM to other bodies (optical elements and to suspended microparticles) are discussed. Research prospects and ways of practical utilisation of optical beams with AM are discussed.",
+            "industryIdentifiers": [
+             {
+              "type": "ISBN_10",
+              "identifier": "1604561149"
+             },
+             {
+              "type": "ISBN_13",
+              "identifier": "9781604561142"
+             }
+            ],
+            "readingModes": {
+             "text": false,
+             "image": false
+            },
+            "pageCount": 112,
+            "printType": "BOOK",
+            "categories": [
+             "Science"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "imageLinks": {
+             "smallThumbnail": "http://books.google.com/books/content?id=D9VEIQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+             "thumbnail": "http://books.google.com/books/content?id=D9VEIQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=D9VEIQAACAAJ&dq=isbn:&hl=&cd=2&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=D9VEIQAACAAJ&dq=isbn:&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Paraxial_Light_Beams_with_Angular_Moment.html?hl=&id=D9VEIQAACAAJ"
+           },
+           "saleInfo": {
+            "country": "US",
+            "saleability": "NOT_FOR_SALE",
+            "isEbook": false
+           },
+           "accessInfo": {
+            "country": "US",
+            "viewability": "NO_PAGES",
+            "embeddable": false,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+             "isAvailable": false
+            },
+            "pdf": {
+             "isAvailable": false
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=D9VEIQAACAAJ&hl=&printsec=frontcover&source=gbs_api",
+            "accessViewStatus": "NONE",
+            "quoteSharingAllowed": false
+           },
+           "searchInfo": {
+            "textSnippet": "Fundamental and applied concepts concerning the ability of light beams to carry a certain mechanical angular momentum (AM) with respect to the propagation axis are reviewed and discussed in this book."
+           }
+          },
+          {
+           "kind": "books#volume",
+           "id": "_n3hAAAAMAAJ",
+           "etag": "uinZqSwAqDU",
+           "selfLink": "https://www.googleapis.com/books/v1/volumes/_n3hAAAAMAAJ",
+           "volumeInfo": {
+            "title": "Zambian Books in Print and ISBN Publisher's Directory",
+            "publishedDate": "1995",
+            "industryIdentifiers": [
+             {
+              "type": "OTHER",
+              "identifier": "IND:30000008583969"
+             }
+            ],
+            "readingModes": {
+             "text": false,
+             "image": false
+            },
+            "printType": "BOOK",
+            "categories": [
+             "International Standard Book Numbers"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "1.1.1.0.preview.0",
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=_n3hAAAAMAAJ&dq=isbn:&hl=&cd=3&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=_n3hAAAAMAAJ&dq=isbn:&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Zambian_Books_in_Print_and_ISBN_Publishe.html?hl=&id=_n3hAAAAMAAJ"
+           },
+           "saleInfo": {
+            "country": "US",
+            "saleability": "NOT_FOR_SALE",
+            "isEbook": false
+           },
+           "accessInfo": {
+            "country": "US",
+            "viewability": "NO_PAGES",
+            "embeddable": false,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+             "isAvailable": false
+            },
+            "pdf": {
+             "isAvailable": false
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=_n3hAAAAMAAJ&hl=&printsec=frontcover&source=gbs_api",
+            "accessViewStatus": "NONE",
+            "quoteSharingAllowed": false
+           }
+          },
+          {
+           "kind": "books#volume",
+           "id": "i1lrYuczMUMC",
+           "etag": "BEd+TRe6LKI",
+           "selfLink": "https://www.googleapis.com/books/v1/volumes/i1lrYuczMUMC",
+           "volumeInfo": {
+            "title": "ISBN - International Standard Book Number",
+            "subtitle": "bibliography ; literature on the ISBN and ISMN (International Standard Music Number) from all over the world",
+            "authors": [
+             " Walravens, Hartmut"
+            ],
+            "publisher": "Simon Bibliothekswissen",
+            "publishedDate": "2010",
+            "description": "Innovative ideas are never easily accepted. Due to the electronic revolution of the information supply new management tools and infrastructures were required. The as simple as brilliant tool the ISBN which assigns each book with a unique number has contributed vastly to the global book and information market.",
+            "industryIdentifiers": [
+             {
+              "type": "ISBN_13",
+              "identifier": "9783940862211"
+             },
+             {
+              "type": "ISBN_10",
+              "identifier": "3940862215"
+             }
+            ],
+            "readingModes": {
+             "text": false,
+             "image": true
+            },
+            "pageCount": 232,
+            "printType": "BOOK",
+            "categories": [
+             "Bibliography"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "imageLinks": {
+             "smallThumbnail": "http://books.google.com/books/content?id=i1lrYuczMUMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+             "thumbnail": "http://books.google.com/books/content?id=i1lrYuczMUMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=i1lrYuczMUMC&printsec=frontcover&dq=isbn:&hl=&cd=4&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=i1lrYuczMUMC&dq=isbn:&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/ISBN_International_Standard_Book_Number.html?hl=&id=i1lrYuczMUMC"
+           },
+           "saleInfo": {
+            "country": "US",
+            "saleability": "NOT_FOR_SALE",
+            "isEbook": false
+           },
+           "accessInfo": {
+            "country": "US",
+            "viewability": "PARTIAL",
+            "embeddable": true,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+             "isAvailable": false
+            },
+            "pdf": {
+             "isAvailable": false
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=i1lrYuczMUMC&hl=&printsec=frontcover&source=gbs_api",
+            "accessViewStatus": "SAMPLE",
+            "quoteSharingAllowed": false
+           },
+           "searchInfo": {
+            "textSnippet": "The as simple as brilliant tool the ISBN which assigns each book with a unique number has contributed vastly to the global book and information market."
+           }
+          },
+          {
+           "kind": "books#volume",
+           "id": "78RPDAAAQBAJ",
+           "etag": "mDaeHVtiWhg",
+           "selfLink": "https://www.googleapis.com/books/v1/volumes/78RPDAAAQBAJ",
+           "volumeInfo": {
+            "title": "Making Sense of Wine Tasting",
+            "subtitle": "",
+            "authors": [
+             "ISBN:978-1-891267-03-1"
+            ],
+            "publisher": "Board and Bench Publishing",
+            "publishedDate": "2010-11-01",
+            "industryIdentifiers": [
+             {
+              "type": "ISBN_13",
+              "identifier": "9780932664389"
+             },
+             {
+              "type": "ISBN_10",
+              "identifier": "0932664385"
+             }
+            ],
+            "readingModes": {
+             "text": true,
+             "image": true
+            },
+            "pageCount": 201,
+            "printType": "BOOK",
+            "categories": [
+             "Cooking"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "1.8.6.0.preview.3",
+            "panelizationSummary": {
+             "containsEpubBubbles": false,
+             "containsImageBubbles": false
+            },
+            "imageLinks": {
+             "smallThumbnail": "http://books.google.com/books/content?id=78RPDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+             "thumbnail": "http://books.google.com/books/content?id=78RPDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=78RPDAAAQBAJ&printsec=frontcover&dq=isbn:&hl=&cd=5&source=gbs_api",
+            "infoLink": "https://play.google.com/store/books/details?id=78RPDAAAQBAJ&source=gbs_api",
+            "canonicalVolumeLink": "https://market.android.com/details?id=book-78RPDAAAQBAJ"
+           },
+           "saleInfo": {
+            "country": "US",
+            "saleability": "FOR_SALE",
+            "isEbook": true,
+            "listPrice": {
+             "amount": 4.95,
+             "currencyCode": "USD"
+            },
+            "retailPrice": {
+             "amount": 3.79,
+             "currencyCode": "USD"
+            },
+            "buyLink": "https://play.google.com/store/books/details?id=78RPDAAAQBAJ&rdid=book-78RPDAAAQBAJ&rdot=1&source=gbs_api",
+            "offers": [
+             {
+              "finskyOfferType": 1,
+              "listPrice": {
+               "amountInMicros": 4950000.0,
+               "currencyCode": "USD"
+              },
+              "retailPrice": {
+               "amountInMicros": 3790000.0,
+               "currencyCode": "USD"
+              },
+              "giftable": true
+             }
+            ]
+           },
+           "accessInfo": {
+            "country": "US",
+            "viewability": "PARTIAL",
+            "embeddable": true,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+             "isAvailable": true,
+             "acsTokenLink": "http://books.google.com/books/download/Making_Sense_of_Wine_Tasting-sample-epub.acsm?id=78RPDAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+            },
+            "pdf": {
+             "isAvailable": true,
+             "acsTokenLink": "http://books.google.com/books/download/Making_Sense_of_Wine_Tasting-sample-pdf.acsm?id=78RPDAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=78RPDAAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+            "accessViewStatus": "SAMPLE",
+            "quoteSharingAllowed": false
+           }
+          },
+          {
+           "kind": "books#volume",
+           "id": "bnE_HwAACAAJ",
+           "etag": "wqXxOgrp6vY",
+           "selfLink": "https://www.googleapis.com/books/v1/volumes/bnE_HwAACAAJ",
+           "volumeInfo": {
+            "title": "The Bar Code Book",
+            "subtitle": "A Comprehensive Guide to Reading, Printing, Specifying, Evaluating, and Using Bar Code and Other Machine-readable Symbols",
+            "authors": [
+             "Roger C. Palmer"
+            ],
+            "publisher": "Trafford on Demand Pub",
+            "publishedDate": "2007",
+            "description": "A comprehensive textbook and reference guide covering all aspects of bar code technology and other forms of machine-readable symbols.",
+            "industryIdentifiers": [
+             {
+              "type": "ISBN_10",
+              "identifier": "1425133746"
+             },
+             {
+              "type": "ISBN_13",
+              "identifier": "9781425133740"
+             }
+            ],
+            "readingModes": {
+             "text": false,
+             "image": false
+            },
+            "pageCount": 470,
+            "printType": "BOOK",
+            "categories": [
+             "Technology & Engineering"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "imageLinks": {
+             "smallThumbnail": "http://books.google.com/books/content?id=bnE_HwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+             "thumbnail": "http://books.google.com/books/content?id=bnE_HwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=bnE_HwAACAAJ&dq=isbn:&hl=&cd=6&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=bnE_HwAACAAJ&dq=isbn:&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/The_Bar_Code_Book.html?hl=&id=bnE_HwAACAAJ"
+           },
+           "saleInfo": {
+            "country": "US",
+            "saleability": "NOT_FOR_SALE",
+            "isEbook": false
+           },
+           "accessInfo": {
+            "country": "US",
+            "viewability": "NO_PAGES",
+            "embeddable": false,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+             "isAvailable": false
+            },
+            "pdf": {
+             "isAvailable": false
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=bnE_HwAACAAJ&hl=&printsec=frontcover&source=gbs_api",
+            "accessViewStatus": "NONE",
+            "quoteSharingAllowed": false
+           },
+           "searchInfo": {
+            "textSnippet": "A comprehensive textbook and reference guide covering all aspects of bar code technology and other forms of machine-readable symbols."
+           }
+          },
+          {
+           "kind": "books#volume",
+           "id": "1-HgAAAAMAAJ",
+           "etag": "/Pgg6kNXuXk",
+           "selfLink": "https://www.googleapis.com/books/v1/volumes/1-HgAAAAMAAJ",
+           "volumeInfo": {
+            "title": "Sri Lanka (ISBN) Publishers Directory",
+            "publishedDate": "1991",
+            "industryIdentifiers": [
+             {
+              "type": "OTHER",
+              "identifier": "UOM:39015081571930"
+             }
+            ],
+            "readingModes": {
+             "text": false,
+             "image": false
+            },
+            "printType": "BOOK",
+            "categories": [
+             "Publishers' standard book numbers"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=1-HgAAAAMAAJ&dq=isbn:&hl=&cd=7&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=1-HgAAAAMAAJ&dq=isbn:&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Sri_Lanka_ISBN_Publishers_Directory.html?hl=&id=1-HgAAAAMAAJ"
+           },
+           "saleInfo": {
+            "country": "US",
+            "saleability": "NOT_FOR_SALE",
+            "isEbook": false
+           },
+           "accessInfo": {
+            "country": "US",
+            "viewability": "NO_PAGES",
+            "embeddable": false,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+             "isAvailable": false
+            },
+            "pdf": {
+             "isAvailable": false
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=1-HgAAAAMAAJ&hl=&printsec=frontcover&source=gbs_api",
+            "accessViewStatus": "NONE",
+            "quoteSharingAllowed": false
+           }
+          },
+          {
+           "kind": "books#volume",
+           "id": "14KJAAAACAAJ",
+           "etag": "Ibheg1Y9GBQ",
+           "selfLink": "https://www.googleapis.com/books/v1/volumes/14KJAAAACAAJ",
+           "volumeInfo": {
+            "title": "ISBN",
+            "subtitle": "International Standard Book Numbering",
+            "authors": [
+             "Standard Book Numbering Agency"
+            ],
+            "publishedDate": "1999",
+            "industryIdentifiers": [
+             {
+              "type": "ISBN_10",
+              "identifier": "0949999083"
+             },
+             {
+              "type": "ISBN_13",
+              "identifier": "9780949999085"
+             }
+            ],
+            "readingModes": {
+             "text": false,
+             "image": false
+            },
+            "pageCount": 21,
+            "printType": "BOOK",
+            "categories": [
+             "International Standard Book Numbers"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "panelizationSummary": {
+             "containsEpubBubbles": false,
+             "containsImageBubbles": false
+            },
+            "imageLinks": {
+             "smallThumbnail": "http://books.google.com/books/content?id=14KJAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+             "thumbnail": "http://books.google.com/books/content?id=14KJAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=14KJAAAACAAJ&dq=isbn:&hl=&cd=8&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=14KJAAAACAAJ&dq=isbn:&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/ISBN.html?hl=&id=14KJAAAACAAJ"
+           },
+           "saleInfo": {
+            "country": "US",
+            "saleability": "NOT_FOR_SALE",
+            "isEbook": false
+           },
+           "accessInfo": {
+            "country": "US",
+            "viewability": "NO_PAGES",
+            "embeddable": false,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+             "isAvailable": false
+            },
+            "pdf": {
+             "isAvailable": false
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=14KJAAAACAAJ&hl=&printsec=frontcover&source=gbs_api",
+            "accessViewStatus": "NONE",
+            "quoteSharingAllowed": false
+           }
+          },
+          {
+           "kind": "books#volume",
+           "id": "qhRCs8Y5SOgC",
+           "etag": "9pydrYob2Og",
+           "selfLink": "https://www.googleapis.com/books/v1/volumes/qhRCs8Y5SOgC",
+           "volumeInfo": {
+            "title": "Lawful Interception, see ISBN 978-1-4668-5384-3",
+            "authors": [
+             "Cory Doctorow"
+            ],
+            "publisher": "Macmillan",
+            "publishedDate": "2013-03-05",
+            "description": "An all-new tale of Marcus Yallow, the hero of the bestselling novels Little Brother and Homeland -- as he deals with the aftermath of a devastating Oakland earthquake, with the help of friends, hacker allies, and some very clever crowdsourced drones. \"I'd recommend Little Brother over pretty much any book I've read this year.\" --Neil Gaiman At the publisher's request, this title is being sold without Digital Rights Management software (DRM) applied.",
+            "industryIdentifiers": [
+             {
+              "type": "ISBN_13",
+              "identifier": "9781466842175"
+             },
+             {
+              "type": "ISBN_10",
+              "identifier": "1466842172"
+             }
+            ],
+            "readingModes": {
+             "text": true,
+             "image": false
+            },
+            "pageCount": 32,
+            "printType": "BOOK",
+            "categories": [
+             "Fiction"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": true,
+            "contentVersion": "1.1.1.0.preview.2",
+            "imageLinks": {
+             "smallThumbnail": "http://books.google.com/books/content?id=qhRCs8Y5SOgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+             "thumbnail": "http://books.google.com/books/content?id=qhRCs8Y5SOgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=qhRCs8Y5SOgC&printsec=frontcover&dq=isbn:&hl=&cd=9&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=qhRCs8Y5SOgC&dq=isbn:&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Lawful_Interception_see_ISBN_978_1_4668.html?hl=&id=qhRCs8Y5SOgC"
+           },
+           "saleInfo": {
+            "country": "US",
+            "saleability": "NOT_FOR_SALE",
+            "isEbook": false
+           },
+           "accessInfo": {
+            "country": "US",
+            "viewability": "PARTIAL",
+            "embeddable": true,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+             "isAvailable": true,
+             "acsTokenLink": "http://books.google.com/books/download/Lawful_Interception_see_ISBN_978_1_4668-sample-epub.acsm?id=qhRCs8Y5SOgC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+            },
+            "pdf": {
+             "isAvailable": false
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=qhRCs8Y5SOgC&hl=&printsec=frontcover&source=gbs_api",
+            "accessViewStatus": "SAMPLE",
+            "quoteSharingAllowed": false
+           },
+           "searchInfo": {
+            "textSnippet": "An all-new tale of Marcus Yallow, the hero of the bestselling novels Little Brother and Homeland -- as he deals with the aftermath of a devastating Oakland earthquake, with the help of friends, hacker allies, and some very clever ..."
+           }
+          },
+          {
+           "kind": "books#volume",
+           "id": "p9hYAAAAMAAJ",
+           "etag": "2q7sMF2jzC4",
+           "selfLink": "https://www.googleapis.com/books/v1/volumes/p9hYAAAAMAAJ",
+           "volumeInfo": {
+            "title": "Handbook of International Documentation and Information",
+            "subtitle": "R - Z. Geographical section. Vol. 7",
+            "publishedDate": "2003",
+            "industryIdentifiers": [
+             {
+              "type": "ISBN_10",
+              "identifier": "3598215827"
+             },
+             {
+              "type": "ISBN_13",
+              "identifier": "9783598215827"
+             }
+            ],
+            "readingModes": {
+             "text": false,
+             "image": false
+            },
+            "pageCount": 1502,
+            "printType": "BOOK",
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "1.2.2.0.preview.0",
+            "panelizationSummary": {
+             "containsEpubBubbles": false,
+             "containsImageBubbles": false
+            },
+            "imageLinks": {
+             "smallThumbnail": "http://books.google.com/books/content?id=p9hYAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+             "thumbnail": "http://books.google.com/books/content?id=p9hYAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=p9hYAAAAMAAJ&q=isbn:&dq=isbn:&hl=&cd=10&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=p9hYAAAAMAAJ&dq=isbn:&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Handbook_of_International_Documentation.html?hl=&id=p9hYAAAAMAAJ"
+           },
+           "saleInfo": {
+            "country": "US",
+            "saleability": "NOT_FOR_SALE",
+            "isEbook": false
+           },
+           "accessInfo": {
+            "country": "US",
+            "viewability": "NO_PAGES",
+            "embeddable": false,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+             "isAvailable": false
+            },
+            "pdf": {
+             "isAvailable": false
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=p9hYAAAAMAAJ&hl=&printsec=frontcover&source=gbs_api",
+            "accessViewStatus": "NONE",
+            "quoteSharingAllowed": false
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Tue, 30 Apr 2019 02:03:30 GMT
+recorded_with: VCR 4.0.0

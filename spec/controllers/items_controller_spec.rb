@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'support/vcr'
 
 RSpec.describe ItemsController, type: :controller do
   let(:user) { create(:user) }
@@ -150,6 +151,53 @@ RSpec.describe ItemsController, type: :controller do
         item = create(:item, user: user)
         delete :destroy, params: { id: item.id }
         expect(flash[:notice]).to match 'Your item has been deleted'
+      end
+    end
+
+    describe 'POST #lookup_new' do
+      context 'with valid isbn' do
+        it "fills in the item's details" do
+          VCR.use_cassette('9781430230571') do
+            post :lookup_new, params: { item: { isbn: '9781430230571' } }
+          end
+
+          expect(assigns(:item).isbn).to eq '9781430230571'
+          expect(assigns(:item).title).to eq 'Pro Puppet'
+          expect(assigns(:item).authors).to eq ['James Turnbull', 'Jeffrey McCune']
+        end
+
+        it 'rerenders the :new template' do
+          VCR.use_cassette('9781430230571') do
+            post :lookup_new, params: { item: { isbn: '9781430230571' } }
+          end
+
+          expect(response).to render_template(:new)
+        end
+      end
+    end
+
+    describe 'PUT #lookup_edit' do
+      context 'with valid isbn' do
+        it "fills in the item's details" do
+          item = create(:item, user: user)
+          VCR.use_cassette('9781451648546') do
+            patch :lookup_edit, params: { id: item.id, item: { isbn: '9781451648546' } }
+          end
+
+          expect(assigns(:item).id).to eq item.id
+          expect(assigns(:item).user).to eq user
+          expect(assigns(:item).isbn).to eq '9781451648546'
+          expect(assigns(:item).title).to eq 'Steve Jobs'
+        end
+
+        it 'rerenders the :new template' do
+          item = create(:item, user: user)
+          VCR.use_cassette('9781451648546') do
+            patch :lookup_edit, params: { id: item.id, item: { isbn: '9781451648546' } }
+          end
+
+          expect(response).to render_template(:edit)
+        end
       end
     end
   end

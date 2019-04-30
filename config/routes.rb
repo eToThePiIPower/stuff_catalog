@@ -10,5 +10,13 @@ Rails.application.routes.draw do
 
   get '/about', to: 'pages#about'
 
-  resources :items
+  resources :items do
+    collection do
+      post :lookup_new
+    end
+    member do
+      put :lookup_edit
+      patch :lookup_edit
+    end
+  end
 end

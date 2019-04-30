@@ -37,4 +37,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'rubocop', '~> 0.63'
   gem 'shoulda-matchers'
+  gem 'vcr'
+  gem 'webmock'
 end

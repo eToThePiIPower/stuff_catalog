@@ -1,12 +1,43 @@
 <%= form_for(@item) do |f| %>
+  <%= f.submit 'Default Submit', class: 'd-none' %>
   <div class="form-group">
     <%= f.label :isbn, 'ISBN' %>
-    <%= f.text_field :isbn, autofocus: true, class: 'form-control' %>
+    <div class="input-group">
+      <%= f.text_field :isbn, autofocus: true, class: 'form-control' %>
+      <div class="input-group-append">
+        <% case controller.action_name
+           when 'new', 'lookup_new', 'create' then %>
+          <%= f.submit 'Lookup by ISBN', class: 'btn btn-primary', formaction: '/items/lookup_new' %>
+        <% when 'edit', 'lookup_edit' then %>
+          <%= f.submit 'Lookup by ISBN', class: 'btn btn-primary', formaction: 'lookup_edit' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :authors %>
+    <%= f.text_field :authors, value: @item.authors.join(', '), class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :categories %>
+    <%= f.text_field :categories, value: @item.categories.join(', '), class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :publisher %>
+    <%= f.text_field :publisher, class: 'form-control' %>
   </div>
 
   <div class="form-group">

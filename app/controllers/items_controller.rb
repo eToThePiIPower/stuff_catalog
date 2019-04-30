@@ -1,6 +1,8 @@
+require 'services/isbn_service'
+
 class ItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_user_item, only: [:show, :edit, :update, :destroy]
+  before_action :find_user_item, only: [:show, :edit, :lookup_edit, :update, :destroy]
 
   def index
     @items = current_user.items.all
@@ -51,10 +53,38 @@ class ItemsController < ApplicationController
     end
   end
 
+  def lookup_new
+    @item = current_user.items.new
+    isbn = params[:item][:isbn]
+    book = Services::ISBNService.new(isbn)
+    book.lookup
+    @item.title = book.title
+    @item.isbn = book.isbn
+    @item.authors = book.authors
+    @item.categories = book.categories
+    @item.description = book.description
+    @item.publisher = book.publisher
+    render :new
+  end
+
+  def lookup_edit
+    isbn = params[:item][:isbn]
+    book = Services::ISBNService.new(isbn)
+    book.lookup
+    @item.title = book.title
+    @item.isbn = book.isbn
+    @item.authors = book.authors
+    @item.categories = book.categories
+    @item.description = book.description
+    @item.publisher = book.publisher
+    render :edit
+  end
+
   private
 
   def item_params
-    params.require(:item).permit(:isbn, :title, :value)
+    params.require(:item).permit(:isbn, :title, :authors, :categories,
+      :description, :publisher, :published_on, :page_count, :value)
   end
 
   def find_user_item

@@ -12,12 +12,27 @@ $fa-font-path: '~font-awesome/fonts';
 }
 
 .list-inline-vbar {
-  .list-inline-item + .list-inline-item {
+  .list-inline-item {
     margin-right: 0;
 
-    &::before {
-      content: "\2503";
-      margin: 0 0.25em;
+    + .list-inline-item {
+      &::before {
+        content: "\2503";
+        margin: 0 0.25em;
+      }
+    }
+  }
+}
+
+.list-inline-dot {
+  .list-inline-item {
+    margin-right: 0;
+
+    + .list-inline-item {
+      &::before {
+        content: "\2022";
+        margin: 0 0.25em;
+      }
     }
   }
 }
